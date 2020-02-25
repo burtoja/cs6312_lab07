@@ -67,7 +67,7 @@ public class BookTUI {
 				case 3:
 					break;
 				default:
-					System.out.println("Invalid choice. Please choose from the following options:");
+					System.out.println("Invalid menu choice. Please choose from the following options:");
 			}
 		} while (userChoice != 3);
 		System.out.println("Thank you for using the Book Manager Application.");
@@ -99,8 +99,20 @@ public class BookTUI {
 	 * @postcondition integer returned corresponding to user input
 	 */
 	private int getIntegerFromUser(String message) {
-		System.out.println(message);
-		return Integer.parseInt(this.userInput.nextLine());
+		String input = "";
+		int userInteger = 0;
+		boolean isValid = false;
+		do {
+			try {
+				System.out.println(message);
+				input = this.userInput.nextLine();
+				userInteger = Integer.parseInt(input);
+				isValid = true;
+			} catch (NumberFormatException nfe) {
+				System.out.println(input + " is not a whole number.");
+			}
+		} while (!isValid);
+		return userInteger;
 	}
 
 	/**
@@ -112,7 +124,16 @@ public class BookTUI {
 	 * @postcondition
 	 */
 	private void addPagesToCollection() {
-
+		boolean isValid = false;
+		do {
+			try {
+				int pageTotal = this.getIntegerFromUser("Please enter a daily page total: ");
+				this.userBookManager.addPages(pageTotal);	
+				isValid = true;
+			} catch (IllegalArgumentException iae) {
+				System.out.println(iae.getMessage());
+			}
+		} while (!isValid);
 	}
 
 	/**
@@ -123,6 +144,6 @@ public class BookTUI {
 	 * @postcondition no change to object
 	 */
 	private void printPageTotals() {
-
+		System.out.println(this.userBookManager.toString());
 	}
 }

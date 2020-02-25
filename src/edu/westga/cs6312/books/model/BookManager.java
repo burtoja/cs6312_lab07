@@ -64,12 +64,12 @@ public class BookManager {
 
 	@Override
 	public String toString() {
-		String report = this.monthName + "\n";
+		String report = this.monthName + "'s page totals are:\n";
 		if (this.dailyPagesRead.size() == 0) {
-			report += "no pages";
+			report += "\tno pages";
 		} else {
 			for (int current : this.dailyPagesRead) {
-				report += current + "\n";
+				report += "\t" + current + "\n";
 			}
 		}
 		return report;
