@@ -109,7 +109,7 @@ public class BookTUI {
 				userInteger = Integer.parseInt(input);
 				isValid = true;
 			} catch (NumberFormatException nfe) {
-				System.out.println(input + " is not a whole number.");
+				System.out.println("Your entry (" + input + ") was not a valid integer.  Please try again.");
 			}
 		} while (!isValid);
 		return userInteger;
@@ -128,7 +128,7 @@ public class BookTUI {
 		do {
 			try {
 				int pageTotal = this.getIntegerFromUser("Please enter a daily page total: ");
-				this.userBookManager.addPages(pageTotal);	
+				this.userBookManager.addPages(pageTotal);
 				isValid = true;
 			} catch (IllegalArgumentException iae) {
 				System.out.println(iae.getMessage());

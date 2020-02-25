@@ -38,7 +38,7 @@ public class BookManager {
 	 */
 	public void setMonth(String monthName) {
 		if (monthName == null) {
-			throw new IllegalArgumentException("Month cannot be null.");
+			throw new NullPointerException("Month cannot be null.");
 		}
 		if (monthName.length() < 2) {
 			throw new IllegalArgumentException("Month name must have at least two characters.");
@@ -57,7 +57,7 @@ public class BookManager {
 	 */
 	public void addPages(int numberOfPagesRead) {
 		if (numberOfPagesRead < 0) {
-			throw new IllegalArgumentException("The number of pages read must be non-negative.");
+			throw new IllegalArgumentException("The number of pages read must be a non-negative integer.");
 		}
 		this.dailyPagesRead.add(numberOfPagesRead);
 	}
