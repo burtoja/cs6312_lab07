@@ -41,16 +41,28 @@ public class BookTUI {
 	 */
 	public void run() {
 		System.out.println("Welcome to the Book Manager Application.");
+		boolean isValid = false;
+		do {
+			try {
+				System.out.println("Please enter the month name:");
+				String monthName = this.userInput.nextLine();
+				userBookManager.setMonth(monthName);
+				isValid = true;
+			} catch (IllegalArgumentException iae) {
+				System.out.println(iae.getMessage() + "\nPlease try again.\n");
+			}
+		} while (!isValid);
+
 		int userChoice;
 		do {
 			this.displayMenu();
 			userChoice = this.getIntegerFromUser("Please enter your choice from the menu: ");
 			switch (userChoice) {
 				case 1:
-
+					this.addPagesToCollection();
 					break;
 				case 2:
-
+					this.printPageTotals();
 					break;
 				case 3:
 					break;
@@ -89,5 +101,28 @@ public class BookTUI {
 	private int getIntegerFromUser(String message) {
 		System.out.println(message);
 		return Integer.parseInt(this.userInput.nextLine());
+	}
+
+	/**
+	 * This method will prompt the user to enter a page total to be added to the
+	 * collection
+	 * 
+	 * @precondition
+	 *
+	 * @postcondition
+	 */
+	private void addPagesToCollection() {
+
+	}
+
+	/**
+	 * This method will print the month and a list of page totals to the console
+	 * 
+	 * @precondition none
+	 *
+	 * @postcondition no change to object
+	 */
+	private void printPageTotals() {
+
 	}
 }

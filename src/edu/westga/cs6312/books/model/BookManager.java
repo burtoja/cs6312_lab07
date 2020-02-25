@@ -38,10 +38,10 @@ public class BookManager {
 	 */
 	public void setMonth(String monthName) {
 		if (monthName == null) {
-			throw new IllegalArgumentException("Invalid entry.  Month cannot be null.");
+			throw new IllegalArgumentException("Month cannot be null.");
 		}
 		if (monthName.length() < 2) {
-			throw new IllegalArgumentException("Invalid entry.  Month must have at least two characters.");
+			throw new IllegalArgumentException("Month name must have at least two characters.");
 		}
 		this.monthName = monthName;
 	}
@@ -57,12 +57,11 @@ public class BookManager {
 	 */
 	public void addPages(int numberOfPagesRead) {
 		if (numberOfPagesRead < 0) {
-			throw new IllegalArgumentException(
-					"Invalid entry.  The number of pages read must me greater than or equal to zero.");
+			throw new IllegalArgumentException("The number of pages read must be non-negative.");
 		}
 		this.dailyPagesRead.add(numberOfPagesRead);
 	}
-	
+
 	@Override
 	public String toString() {
 		String report = this.monthName + "\n";
