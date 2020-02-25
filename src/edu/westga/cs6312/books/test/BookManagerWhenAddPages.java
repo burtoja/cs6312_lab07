@@ -17,19 +17,21 @@ public class BookManagerWhenAddPages {
 
 	/**
 	 * Test the addPages method by adding single page entry (234) to a newly created
-	 * BookManager object with no month set. EXPECT: \n234\n
+	 * BookManager object with no month set. 
+	 * EXPECT: 's page totals are:\n\t234\n
 	 */
 	@Test
 	public void testAddPagesExpect234NoMonth() {
 		BookManager theBookManager = new BookManager();
 		theBookManager.addPages(234);
 		String report = theBookManager.toString();
-		assertEquals("\n234\n", report);
+		assertEquals("'s page totals are:\n\t234\n", report);
 	}
 
 	/**
 	 * Test the addPages method by adding multiple page entries (234, 541, 8, 12) to
-	 * a newly created BookManager object with no month set. EXPECT: \n234\n54\n8\n12\n
+	 * a newly created BookManager object with no month set. 
+	 * EXPECT: 's page totals are:\n\t234\n\t541\n\t8\n\t12\n
 	 */
 	@Test
 	public void testAddPagesExpect234541812NoMonth() {
@@ -39,12 +41,13 @@ public class BookManagerWhenAddPages {
 		theBookManager.addPages(8);
 		theBookManager.addPages(12);
 		String report = theBookManager.toString();
-		assertEquals("\n234\n541\n8\n12\n", report);
+		assertEquals("'s page totals are:\n\t234\n\t541\n\t8\n\t12\n", report);
 	}
 	
 	/**
 	 * Test the addPages method by adding multiple page entries (234, 541, 8, 12) and a month to
-	 * a newly created BookManager object with no month set. EXPECT: May\n234\n54\n8\n12\n
+	 * a newly created BookManager object with no month set. 
+	 * EXPECT: May's page totals are:\n\t234\n\t541\n\t8\n\t12\n
 	 */
 	@Test
 	public void testAddPagesExpectMay234541812() {
@@ -55,19 +58,20 @@ public class BookManagerWhenAddPages {
 		theBookManager.addPages(8);
 		theBookManager.addPages(12);
 		String report = theBookManager.toString();
-		assertEquals("May\n234\n541\n8\n12\n", report);
+		assertEquals("May's page totals are:\n\t234\n\t541\n\t8\n\t12\n", report);
 	}
 	
 	/**
 	 * Test the addPages method by adding single page entry of zero pages to a newly created
-	 * BookManager object with no month set. EXPECT: \n0
+	 * BookManager object with no month set. 
+	 * EXPECT: 's page totals are:\n\t0\n
 	 */
 	@Test
 	public void testAddPagesExpectNoMonthNoPages() {
 		BookManager theBookManager = new BookManager();
 		theBookManager.addPages(0);
 		String report = theBookManager.toString();
-		assertEquals("\n0\n", report);
+		assertEquals("'s page totals are:\n\t0\n", report);
 	}
 
 }

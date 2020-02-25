@@ -18,40 +18,40 @@ public class BookManagerWhenSetMonth {
 	/**
 	 * Test the setMonth method by creating new BookManager object and then setting
 	 * the month to "June" 
-	 * EXPECT: June\nno pages
+	 * EXPECT: June's page totals are:\n\tno pages
 	 */
 	@Test
 	public void testSetMonthJuneExpectJuneNoPages() {
 		BookManager theBookManager = new BookManager();
 		theBookManager.setMonth("June");
 		String report = theBookManager.toString();
-		assertEquals("June\nno pages", report);
+		assertEquals("June's page totals are:\n\tno pages", report);
 	}
 	
 	/**
 	 * Test the setMonth method by creating new BookManager object and then setting
 	 * the month to a two character string "Ap" 
-	 * EXPECT: Ap\nno pages
+	 * EXPECT: Ap's page totals are:\n\tno pages
 	 */
 	@Test
 	public void testSetMonthApExpectApNoPages() {
 		BookManager theBookManager = new BookManager();
 		theBookManager.setMonth("Ap");
 		String report = theBookManager.toString();
-		assertEquals("Ap\nno pages", report);
+		assertEquals("Ap's page totals are:\n\tno pages", report);
 	}
 	
 	/**
 	 * Test the setMonth method by creating new BookManager object and then setting
 	 * the month to a character string with a space in it "The Space" 
-	 * EXPECT: The Space\nno pages
+	 * EXPECT: The Space's page totals are:\n\tno pages
 	 */
 	@Test
 	public void testSetMonthWithSpaceExpectTheSpaceWithSpaceNoPages() {
 		BookManager theBookManager = new BookManager();
 		theBookManager.setMonth("The Space");
 		String report = theBookManager.toString();
-		assertEquals("The Space\nno pages", report);
+		assertEquals("The Space's page totals are:\n\tno pages", report);
 	}
 
 }
