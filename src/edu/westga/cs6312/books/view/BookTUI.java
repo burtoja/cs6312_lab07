@@ -119,9 +119,9 @@ public class BookTUI {
 	 * This method will prompt the user to enter a page total to be added to the
 	 * collection
 	 * 
-	 * @precondition
+	 * @precondition	none (user input must meet conditions established and checked elsewhere)
 	 *
-	 * @postcondition
+	 * @postcondition	BookManager object has additional entry of pages
 	 */
 	private void addPagesToCollection() {
 		boolean isValid = false;
