@@ -41,18 +41,7 @@ public class BookTUI {
 	 */
 	public void run() {
 		System.out.println("Welcome to the Book Manager Application.");
-		boolean isValid = false;
-		do {
-			try {
-				System.out.println("Please enter the month name:");
-				String monthName = this.userInput.nextLine();
-				this.userBookManager.setMonth(monthName);
-				isValid = true;
-			} catch (IllegalArgumentException iae) {
-				System.out.println(iae.getMessage() + "\nPlease try again.\n");
-			}
-		} while (!isValid);
-
+		this.getMonthFromUser();
 		int userChoice;
 		do {
 			this.displayMenu();
@@ -71,6 +60,29 @@ public class BookTUI {
 			}
 		} while (userChoice != 3);
 		System.out.println("Thank you for using the Book Manager Application.");
+	}
+
+	/**
+	 * Prompts user to enter the month for the collection of pages read and stores
+	 * the value (if valid) to the month name for this collection
+	 * 
+	 * @precondition user must input a minimum of two characters (any two will do)
+	 *
+	 * @postcondition the BookManager object month will be set to the users input
+	 *                provided it is valid (>1 character)
+	 */
+	private void getMonthFromUser() {
+		boolean isValid = false;
+		do {
+			try {
+				System.out.println("Please enter the month name:");
+				String monthName = this.userInput.nextLine();
+				this.userBookManager.setMonth(monthName);
+				isValid = true;
+			} catch (IllegalArgumentException iae) {
+				System.out.println(iae.getMessage() + "\nPlease try again.\n");
+			}
+		} while (!isValid);
 	}
 
 	/**
@@ -119,9 +131,10 @@ public class BookTUI {
 	 * This method will prompt the user to enter a page total to be added to the
 	 * collection
 	 * 
-	 * @precondition	none (user input must meet conditions established and checked elsewhere)
+	 * @precondition none (user input must meet conditions established and checked
+	 *               elsewhere)
 	 *
-	 * @postcondition	BookManager object has additional entry of pages
+	 * @postcondition BookManager object has additional entry of pages
 	 */
 	private void addPagesToCollection() {
 		boolean isValid = false;

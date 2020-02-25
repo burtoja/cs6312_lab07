@@ -14,7 +14,7 @@ public class BookManager {
 	private String monthName;
 
 	/**
-	 * Constructor for BookMAnager objects
+	 * Constructor for BookManager objects
 	 *
 	 * @precondition none
 	 *
@@ -51,7 +51,8 @@ public class BookManager {
 	 * 
 	 * @param numberOfPagesRead number of pages read to be added
 	 *
-	 * @precondition numberOfPagesRead >= 0
+	 * @precondition numberOfPagesRead >= 0 and less than 2147483648 (seems like
+	 *               reasonable bounds for pages read in a sitting)
 	 *
 	 * @postcondition an entry is added to the dailyPagesRead ArrayList
 	 */
