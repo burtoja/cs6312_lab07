@@ -10,8 +10,8 @@ import java.util.ArrayList;
  *
  */
 public class BookManager {
-	ArrayList<Integer> dailyPagesRead;
-	String monthName;
+	private ArrayList<Integer> dailyPagesRead;
+	private String monthName;
 
 	/**
 	 * Constructor for BookMAnager objects

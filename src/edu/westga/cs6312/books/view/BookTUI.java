@@ -46,7 +46,7 @@ public class BookTUI {
 			try {
 				System.out.println("Please enter the month name:");
 				String monthName = this.userInput.nextLine();
-				userBookManager.setMonth(monthName);
+				this.userBookManager.setMonth(monthName);
 				isValid = true;
 			} catch (IllegalArgumentException iae) {
 				System.out.println(iae.getMessage() + "\nPlease try again.\n");
