@@ -1,4 +1,4 @@
-package edu.westga.cs6312.books;
+package edu.westga.cs6312.books.model;
 
 import java.util.ArrayList;
 
@@ -69,7 +69,9 @@ public class BookManager {
 		if (this.dailyPagesRead.size() == 0) {
 			report += "no pages";
 		} else {
-			report += this.dailyPagesRead;
+			for (int current : this.dailyPagesRead) {
+				report += current + "\n";
+			}
 		}
 		return report;
 	}

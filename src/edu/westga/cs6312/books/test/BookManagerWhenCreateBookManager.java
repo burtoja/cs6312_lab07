@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import edu.westga.cs6312.books.BookManager;
+import edu.westga.cs6312.books.model.BookManager;
 
 /**
  * This will serve to test the constructor and toString method in the
